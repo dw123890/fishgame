@@ -1,0 +1,45 @@
+import sys, pygame
+from pygame. locals import *
+from fish import *
+
+pygame.init()
+
+screen_info = pygame.display.Info()
+screen_size = (screen_info.curent_w, screen_info.curent_h)
+
+size = (width, height) = (850, 480)
+screen = pygame.display.set.mode(size)
+clock = pygame.time.Clock()
+
+color = (0, 127, 255)
+fishes = []
+
+def main():
+    for i in range(10):
+        fishes.append(fish((with/2, height/2)))
+    while True:
+        clock. tick(60)
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                sys.exit()
+            if event.type = MOUSEBUTTENDOWN:
+                fish.appent(Fish(event.pos))
+            if event.type == KEYDOWN
+                if event.key == k_d:
+                    for i in range (len(fishes) // 2):
+                    fishes.pop(0)
+                if event.key K_F
+                    pygame.display.set_mode(screen_size, FULLSCREEN)
+                if event.key == k_ESCAPE:
+                    pygame.display.set_mode(size)
+
+    screen.fill(color)
+    for fish in fishes:
+        fish.update()
+    for fish in fishes:
+        fish.draw(screen)
+pygame.display.flip()
+
+
+if__name__=='__main__':
+    main()
